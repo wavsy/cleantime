@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "CleanTime – Textilreinigung und Wäscherei in Sofia",
+    "description": "Chemische Reinigung, Wäsche, Lederreinigung, Schuhpflege und Färben im Zentrum von Sofia. Zwei Filialen sowie Abholung und Lieferung an Ihre Adresse."
+  },
+  "nav": {
+    "services": "Leistungen",
+    "how": "Ablauf",
+    "results": "Ergebnisse",
+    "locations": "Filialen",
+    "call": "Anrufen",
+    "language": "Sprache",
+    "menu": "Menü"
+  },
+  "hero": {
+    "eyebrow": "Textilreinigung · Sofia",
+    "title": "Ihre Kleidung verdient mehr als eine Waschmaschine",
+    "text": "Chemische Reinigung, Wäsche, Fleckentfernung und Schuhpflege. Zwei Filialen im Zentrum von Sofia sowie Abholung und Lieferung an Ihre Adresse.",
+    "callPrimary": "Jetzt anrufen",
+    "seeLocations": "Unsere Filialen",
+    "facts": [
+      "2 Filialen im Zentrum",
+      "Abholung und Lieferung",
+      "Kleidung, Leder, Schuhe und Taschen"
+    ]
+  },
+  "services": {
+    "eyebrow": "Leistungen",
+    "title": "Was wir machen",
+    "items": [
+      {
+        "title": "Chemische Reinigung",
+        "text": "Für Anzüge, Mäntel, Kleider und alles, was nicht in die Waschmaschine gehört. Pro Stück oder nach Kilo."
+      },
+      {
+        "title": "Lederreinigung",
+        "text": "Jacken, Mäntel und andere Lederwaren."
+      },
+      {
+        "title": "Wäscheservice",
+        "text": "Alltagskleidung und Heimtextilien, gewaschen und tragefertig."
+      },
+      {
+        "title": "Bügelservice",
+        "text": "Nur Bügeln, wenn die Kleidung sauber, aber zerknittert ist."
+      },
+      {
+        "title": "Schuhreinigung",
+        "text": "Wir geben Ihren Lieblingsschuhen ihr frisches Aussehen zurück."
+      },
+      {
+        "title": "Taschen, Koffer und Ausrüstung",
+        "text": "Wir reinigen Taschen, Koffer und Ausrüstung."
+      },
+      {
+        "title": "Lederfärbung",
+        "text": "Wir frischen die Farbe von Glattleder auf oder ändern sie."
+      },
+      {
+        "title": "Textilfärbung",
+        "text": "Wir färben Kleidung und Textilien in einer neuen Farbe."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "Ablauf",
+    "title": "Drei Schritte zu sauberer Kleidung",
+    "steps": [
+      {
+        "title": "Sie rufen an",
+        "text": "Wir vereinbaren einen Tag und eine Uhrzeit, die Ihnen passen."
+      },
+      {
+        "title": "Wir holen ab",
+        "text": "An Ihrer Adresse – oder Sie geben die Kleidung in einer unserer Filialen ab."
+      },
+      {
+        "title": "Wir bringen sie sauber zurück",
+        "text": "Gereinigt, gebügelt und tragefertig."
+      }
+    ]
+  },
+  "care": {
+    "eyebrow": "Gut zu wissen",
+    "title": "Was das Pflegeetikett sagt",
+    "text": "Der Kreis auf dem Etikett ist das Zeichen für professionelle Reinigung. So lesen Sie es.",
+    "items": [
+      {
+        "symbol": "P",
+        "title": "Kreis mit P",
+        "text": "Professionelle chemische Reinigung mit den üblichen Lösungsmitteln. Das häufigste Symbol."
+      },
+      {
+        "symbol": "F",
+        "title": "Kreis mit F",
+        "text": "Chemische Reinigung nur mit milderen Kohlenwasserstoff-Lösungsmitteln. Für empfindlichere Stoffe."
+      },
+      {
+        "symbol": "W",
+        "title": "Kreis mit W",
+        "text": "Professionelle Nassreinigung: mit Wasser, aber mit speziellen Programmen und Mitteln."
+      },
+      {
+        "symbol": "X",
+        "title": "Durchgestrichener Kreis",
+        "text": "Das Kleidungsstück darf nicht chemisch gereinigt werden."
+      }
+    ],
+    "note": "Ein Balken unter dem Kreis bedeutet ein schonendes Programm. Fehlt das Etikett oder ist es unleserlich, bringen Sie das Kleidungsstück vorbei und wir sehen es uns an."
+  },
+  "results": {
+    "eyebrow": "Ergebnisse",
+    "title": "Vorher und nachher",
+    "text": "Ziehen Sie den Regler, um den Unterschied zu sehen.",
+    "before": "Vorher",
+    "after": "Nachher",
+    "sliderLabel": "Vergleich vorher und nachher"
+  },
+  "gallery": {
+    "eyebrow": "Unsere Filialen",
+    "title": "Werfen Sie einen Blick hinein",
+    "placeholder": "Foto folgt"
+  },
+  "faq": {
+    "eyebrow": "Fragen",
+    "title": "Häufige Fragen",
+    "items": [
+      {
+        "q": "Was ist chemische Reinigung eigentlich?",
+        "a": "Reinigung mit einem Lösungsmittel statt mit Wasser. Das Lösungsmittel löst Fett und Schmutz, ohne dass die Fasern aufquellen, deshalb läuft das Kleidungsstück nicht ein und behält seine Form. Geeignet für Wolle, Seide, Viskose und gefütterte Kleidung."
+      },
+      {
+        "q": "Welche Kleidung sollte ich zur Reinigung bringen?",
+        "a": "Anzüge, Sakkos, Mäntel, Wolle und Kaschmir, Seide sowie alles mit Futter, Polstern oder Verzierungen. Am sichersten ist das Pflegeetikett: Ein Kreis bedeutet professionelle Reinigung."
+      },
+      {
+        "q": "Was mache ich bei einem frischen Fleck?",
+        "a": "Tupfen Sie ihn mit einem trockenen Tuch ab, ohne zu reiben. Gießen Sie kein heißes Wasser darauf und bügeln Sie nicht darüber, denn Hitze fixiert den Fleck. Bringen Sie das Kleidungsstück so bald wie möglich und sagen Sie uns, woher der Fleck stammt."
+      },
+      {
+        "q": "Geht jeder Fleck heraus?",
+        "a": "Nicht immer. Es hängt vom Stoff, von der Art des Flecks und davon ab, wie alt er ist. Alte Flecken und solche, die zu Hause mit Hitze oder starken Mitteln behandelt wurden, sind am schwierigsten. Wir sagen Ihnen ehrlich, was zu erwarten ist, bevor wir beginnen."
+      },
+      {
+        "q": "Warum sollte man Leder nicht zu Hause waschen?",
+        "a": "Wasser und gewöhnliche Waschmittel trocknen Leder aus: Es wird hart, läuft ein und verliert Farbe. Lederwaren werden mit einem speziellen Verfahren gereinigt und anschließend gepflegt."
+      },
+      {
+        "q": "Kann jedes Kleidungsstück gefärbt werden?",
+        "a": "Naturfasern wie Baumwolle, Leinen, Wolle, Seide und Viskose nehmen Farbe gut an. Polyester und andere Synthetikfasern nehmen sie schlecht an. Gefärbt wird in einen dunkleren Ton als den jetzigen, und Nähte sind oft mit Polyestergarn genäht und können die alte Farbe behalten."
+      },
+      {
+        "q": "Wie bereite ich meine Kleidung vor?",
+        "a": "Leeren Sie die Taschen, zeigen Sie uns die Flecken und erwähnen Sie Risse, offene Nähte oder fehlende Knöpfe. So wissen wir, worauf wir achten müssen."
+      },
+      {
+        "q": "Wie lange dauert es und was kostet es?",
+        "a": "Das hängt vom Kleidungsstück und von der Leistung ab. Rufen Sie an und wir sagen es Ihnen sofort."
+      }
+    ]
+  },
+  "locations": {
+    "eyebrow": "Filialen",
+    "title": "Kommen Sie vorbei oder rufen Sie an",
+    "directions": "Route planen",
+    "call": "Anrufen",
+    "items": {
+      "graf": {
+        "name": "Filiale Graf Ignatiev",
+        "address": "ul. Graf Ignatiev 29, Sofia"
+      },
+      "solunska": {
+        "name": "Filiale Solunska",
+        "address": "ul. Solunska 11, Sofia"
+      }
+    }
+  },
+  "cta": {
+    "title": "Ein Kleidungsstück, das gerettet werden muss?",
+    "text": "Rufen Sie an und wir sagen Ihnen, wie wir helfen können."
+  },
+  "assistant": {
+    "title": "Assistent",
+    "subtitle": "Antwortet sofort auf häufige Fragen",
+    "greeting": "Guten Tag! Fragen Sie mich nach unseren Leistungen, Flecken, Pflegeetiketten oder wo Sie uns finden.",
+    "hello": "Guten Tag! Wie kann ich helfen?",
+    "placeholder": "Frage eingeben…",
+    "send": "Senden",
+    "open": "Assistenten öffnen",
+    "close": "Schließen",
+    "typing": "Schreibt…",
+    "fallback": "Da bin ich mir nicht sicher. Am schnellsten bekommen Sie eine Antwort per Telefon.",
+    "disclaimer": "Automatischer Assistent mit vorbereiteten Antworten. Für genaue Auskünfte rufen Sie bitte an.",
+    "servicesIntro": "Das machen wir:",
+    "locationsIntro": "Wir haben zwei Filialen im Zentrum von Sofia:",
+    "pickupIntro": "Wir holen Ihre Kleidung an Ihrer Adresse ab und bringen sie zurück:",
+    "chips": {
+      "services": "Leistungen",
+      "stain": "Ich habe einen Fleck",
+      "label": "Pflegeetikett",
+      "pickup": "Abholung",
+      "locations": "Wo sind Sie?",
+      "dye": "Färben"
+    },
+    "kb": {
+      "wine": "Rotwein: sofort mit einem trockenen Tuch abtupfen, nicht reiben, und kein heißes Wasser verwenden. Kein Bleichmittel auf farbigen oder empfindlichen Stoffen. Je früher Sie das Kleidungsstück bringen, desto besser die Chancen.",
+      "coffee": "Kaffee und Tee: abtupfen und von der Rückseite des Stoffes vorsichtig mit kaltem Wasser ausspülen, wenn das Kleidungsstück waschbar ist. Wolle, Seide und gefütterte Kleidung nicht nass machen, sondern zu uns bringen.",
+      "grease": "Fettflecken gehen mit Wasser nicht heraus. Tupfen Sie den Überschuss mit einem trockenen Tuch ab, ohne zu drücken, und bügeln Sie nicht über den Fleck. Fett löst sich am besten in der chemischen Reinigung.",
+      "ink": "Tinte und Kugelschreiber: nicht reiben und nicht nass machen, sonst breitet sich der Fleck aus. Bringen Sie das Kleidungsstück so bald wie möglich und sagen Sie uns, woher der Fleck stammt.",
+      "blood": "Blut: nur kaltes Wasser. Warmes Wasser und Bügeln fixieren den Fleck im Stoff.",
+      "sweat": "Gelbe Ränder entstehen durch Schweiß und Deo, die mit der Zeit mit dem Stoff reagieren. Regelmäßige Reinigung beugt vor. Alte Vergilbungen sind schwer zu entfernen und gehen nicht immer vollständig heraus.",
+      "makeup": "Make-up, Lippenstift und Foundation sind fetthaltige Flecken: nicht nass machen und nicht reiben. Sie lassen sich in der chemischen Reinigung meist gut entfernen.",
+      "wedding": "Braut- und Abendkleider bestehen aus empfindlichen Stoffen mit Spitze und Verzierungen und werden vor der Reinigung einzeln geprüft. Rufen Sie an oder bringen Sie das Kleid vorbei, damit wir es uns ansehen.",
+      "down": "Daunenjacken und Skibekleidung brauchen eine spezielle Wäsche und sorgfältiges Trocknen, damit die Daunen nicht verklumpen. Zu Hause gelingt das selten gut.",
+      "home": "Heimtextilien wie Vorhänge, Tischdecken, Decken und Bettwäsche können ebenfalls professionell gereinigt werden. Rufen Sie an, damit wir klären, was Sie bringen und wie groß es ist.",
+      "carpet": "Ich bin nicht sicher, ob wir Teppiche annehmen. Rufen Sie an, dort sagt man es Ihnen sofort.",
+      "shrink": "Kleidung läuft meist durch warmes Wasser, starkes Schleudern und den Trockner ein, vor allem Wolle. Ein eingelaufenes Wollteil erholt sich selten ganz, deshalb gehören solche Stücke besser in die chemische Reinigung.",
+      "smell": "Ein richtig gereinigtes Kleidungsstück sollte nicht nach Lösungsmittel riechen. Gerüche von Schweiß, Rauch und Essen gehen bei der Reinigung meist heraus. Wenn Sie nach der Reinigung einen Geruch bemerken, sagen Sie es uns.",
+      "howoften": "Sakkos und Anzüge: nach einigen Malen Tragen oder wenn es einen Fleck oder Geruch gibt. Beide Teile eines Anzugs immer zusammen reinigen, damit die Farbe gleich bleibt. Mäntel mindestens einmal pro Saison, vor dem Einlagern.",
+      "storage": "Reinigen Sie Kleidung, bevor Sie sie für die Saison einlagern: Motten werden von Verschmutzungen angezogen, und unsichtbare Flecken dunkeln mit der Zeit nach. Entfernen Sie die Plastikhülle und verwenden Sie einen atmungsaktiven Kleidersack und einen breiten Bügel.",
+      "white": "Weiße Kleidung wird durch Waschmittelreste, Schweiß und das Waschen mit Buntem grau oder gelb. Rufen Sie an, damit wir beurteilen können, ob sich das Stück auffrischen lässt.",
+      "bleed": "Wenn ein Kleidungsstück auf ein anderes abgefärbt hat, trocknen und bügeln Sie es nicht, denn Hitze fixiert die Farbe. Bringen Sie es so bald wie möglich.",
+      "hours": "Die Öffnungszeiten der einzelnen Filialen erfahren Sie telefonisch:",
+      "payment": "Nach den Zahlungsmöglichkeiten fragen Sie bitte in der Filiale:",
+      "express": "Bei eiligen Aufträgen rufen Sie bitte an, ob es möglich ist:",
+      "repair": "Nach Reparaturen wie Reißverschlüssen, Knöpfen und Säumen fragen Sie bitte in der Filiale:",
+      "guarantee": "Bei einem Problem mit einem Auftrag rufen Sie bitte die Filiale an, in der Sie das Kleidungsstück abgegeben haben:",
+      "human": "Natürlich. Rufen Sie an und Sie sprechen mit jemandem aus der Filiale:",
+      "thanks": "Gern geschehen! Fragen Sie ruhig, wenn es noch etwas gibt.",
+      "bye": "Auf Wiedersehen und einen schönen Tag!"
+    }
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "credit": "Website von Wavsy"
+  }
+}

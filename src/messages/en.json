@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "title": "CleanTime – dry cleaning and laundry in Sofia",
+    "description": "Dry cleaning, laundry, stain removal and shoe cleaning in central Sofia. Two shops, plus pickup and delivery from your address."
+  },
+  "nav": {
+    "services": "Services",
+    "how": "How it works",
+    "results": "Results",
+    "locations": "Shops",
+    "call": "Call us",
+    "language": "Language",
+    "menu": "Menu"
+  },
+  "hero": {
+    "eyebrow": "Dry cleaning · Sofia",
+    "title": "Your clothes deserve more than a washing machine",
+    "text": "Dry cleaning, laundry, stains and shoes. Two shops in central Sofia, plus pickup and delivery from your address.",
+    "callPrimary": "Call now",
+    "seeLocations": "See our shops",
+    "facts": [
+      "2 shops in the centre",
+      "Pickup and delivery",
+      "Clothes, leather, shoes and bags"
+    ]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "What we do",
+    "items": [
+      {
+        "title": "Dry cleaning",
+        "text": "For suits, coats, dresses and anything that should stay out of a washing machine. Per item or by the kilo."
+      },
+      {
+        "title": "Leather dry cleaning",
+        "text": "Jackets, coats and other leather items."
+      },
+      {
+        "title": "Laundry",
+        "text": "Everyday clothes and home textiles, washed and ready to wear."
+      },
+      {
+        "title": "Ironing",
+        "text": "Ironing only, for clothes that are clean but creased."
+      },
+      {
+        "title": "Shoe cleaning",
+        "text": "We bring the fresh look back to your favourite shoes."
+      },
+      {
+        "title": "Bags, suitcases and gear",
+        "text": "We clean bags, suitcases and gear."
+      },
+      {
+        "title": "Leather dyeing",
+        "text": "We refresh or change the colour of smooth leather items."
+      },
+      {
+        "title": "Textile dyeing",
+        "text": "We dye clothes and textiles a new colour."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "Three steps to clean clothes",
+    "steps": [
+      {
+        "title": "You call",
+        "text": "We agree on a day and time that suit you."
+      },
+      {
+        "title": "We collect",
+        "text": "From your address, or you drop them off at one of our shops."
+      },
+      {
+        "title": "We return them clean",
+        "text": "Cleaned, pressed and ready to wear."
+      }
+    ]
+  },
+  "care": {
+    "eyebrow": "Good to know",
+    "title": "What the care label says",
+    "text": "The circle on the label is the sign for professional cleaning. Here is how to read it.",
+    "items": [
+      {
+        "symbol": "P",
+        "title": "Circle with P",
+        "text": "Professional dry cleaning with the usual solvents. The most common symbol."
+      },
+      {
+        "symbol": "F",
+        "title": "Circle with F",
+        "text": "Dry cleaning with milder hydrocarbon solvents only. For more delicate fabrics."
+      },
+      {
+        "symbol": "W",
+        "title": "Circle with W",
+        "text": "Professional wet cleaning: with water, but using special programmes and detergents."
+      },
+      {
+        "symbol": "X",
+        "title": "Crossed-out circle",
+        "text": "The garment must not be dry cleaned."
+      }
+    ],
+    "note": "A bar under the circle means a gentle programme. If the label is missing or unreadable, bring the garment in and we will take a look."
+  },
+  "results": {
+    "eyebrow": "Results",
+    "title": "Before and after",
+    "text": "Drag to see the difference.",
+    "before": "Before",
+    "after": "After",
+    "sliderLabel": "Before and after comparison"
+  },
+  "gallery": {
+    "eyebrow": "Our shops",
+    "title": "Take a look inside",
+    "placeholder": "Photo coming soon"
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "What is dry cleaning, really?",
+        "a": "Cleaning with a solvent instead of water. The solvent lifts grease and dirt without making the fibres swell, so the garment does not shrink or lose its shape. It suits wool, silk, viscose and lined garments."
+      },
+      {
+        "q": "Which clothes should I bring for dry cleaning?",
+        "a": "Suits, jackets, coats, wool and cashmere, silk, and anything lined, padded or embellished. The care label is the safest guide: a circle means professional cleaning."
+      },
+      {
+        "q": "What should I do with a fresh stain?",
+        "a": "Blot it with a dry cloth without rubbing. Do not pour hot water on it and do not iron over it, because heat sets the stain. Bring the garment in as soon as you can and tell us what caused it."
+      },
+      {
+        "q": "Does every stain come out?",
+        "a": "Not always. It depends on the fabric, the type of stain and how long it has been there. Old stains and stains treated at home with heat or strong products are the hardest. We will tell you honestly what to expect before we start."
+      },
+      {
+        "q": "Why should leather not be washed at home?",
+        "a": "Water and ordinary detergents dry leather out: it stiffens, shrinks and loses colour. Leather items are cleaned with a special process and then conditioned."
+      },
+      {
+        "q": "Can any garment be dyed?",
+        "a": "Natural fibres such as cotton, linen, wool, silk and viscose take dye well. Polyester and other synthetics take it poorly. Dyeing goes to a darker colour than the current one, and seams are often sewn with polyester thread that may keep the old colour."
+      },
+      {
+        "q": "How should I prepare my clothes?",
+        "a": "Empty the pockets, show us the stains and mention any tears, loose seams or missing buttons. That way we know what to look out for."
+      },
+      {
+        "q": "How long does it take and what does it cost?",
+        "a": "It depends on the garment and the service. Call us and we will tell you right away."
+      }
+    ]
+  },
+  "locations": {
+    "eyebrow": "Shops",
+    "title": "Drop by or give us a call",
+    "directions": "Directions",
+    "call": "Call",
+    "items": {
+      "graf": {
+        "name": "Graf Ignatiev shop",
+        "address": "29 Graf Ignatiev St, Sofia"
+      },
+      "solunska": {
+        "name": "Solunska shop",
+        "address": "11 Solunska St, Sofia"
+      }
+    }
+  },
+  "cta": {
+    "title": "Got a garment that needs saving?",
+    "text": "Call us and we will tell you how we can help."
+  },
+  "assistant": {
+    "title": "Assistant",
+    "subtitle": "Instant answers to common questions",
+    "greeting": "Hello! Ask me about our services, stains, care labels or where to find us.",
+    "hello": "Hello! How can I help?",
+    "placeholder": "Type a question…",
+    "send": "Send",
+    "open": "Open the assistant",
+    "close": "Close",
+    "typing": "Typing…",
+    "fallback": "I am not sure about that. The quickest way to get an answer is by phone.",
+    "disclaimer": "Automatic assistant with prepared answers. For exact information, please call.",
+    "servicesIntro": "Here is what we do:",
+    "locationsIntro": "We have two shops in central Sofia:",
+    "pickupIntro": "We collect and return your clothes at your address:",
+    "chips": {
+      "services": "Services",
+      "stain": "I have a stain",
+      "label": "Care label",
+      "pickup": "Pickup",
+      "locations": "Where are you?",
+      "dye": "Dyeing"
+    },
+    "kb": {
+      "wine": "Red wine: blot straight away with a dry cloth without rubbing, and do not use hot water. Keep bleach away from coloured or delicate fabrics. The sooner you bring the garment in, the better the chances.",
+      "coffee": "Coffee and tea: blot, then rinse gently with cold water from the back of the fabric if the garment is washable. Do not wet wool, silk or lined garments; bring them in instead.",
+      "grease": "Grease stains do not come out with water. Blot the excess with a dry tissue without pressing, and do not iron over the stain. Grease dissolves best in dry cleaning.",
+      "ink": "Ink and ballpoint pen: do not rub or wet it, because the stain spreads. Bring the garment in as soon as you can and tell us what caused it.",
+      "blood": "Blood: cold water only. Warm water and ironing set the stain into the fabric.",
+      "sweat": "Yellow marks come from sweat and deodorant reacting with the fabric over time. Regular cleaning prevents them. Old yellowing is hard to remove and does not always come out completely.",
+      "makeup": "Make-up, lipstick and foundation are greasy stains: do not wet or rub them. They usually respond well to dry cleaning.",
+      "wedding": "Wedding and formal dresses use delicate fabrics, lace and embellishment, and are inspected one by one before cleaning. Call us or bring the dress in so we can take a look.",
+      "down": "Down jackets and ski wear need a special wash and careful drying so the down does not clump. This rarely works well at home.",
+      "home": "Home textiles such as curtains, tablecloths, blankets and bed linen can be professionally cleaned too. Call us so we can check what you are bringing and its size.",
+      "carpet": "I am not sure whether we take carpets. Call and they will tell you right away.",
+      "shrink": "Clothes mostly shrink from warm water, a strong spin and tumble drying, wool especially. A shrunken wool garment rarely recovers fully, so such garments are better dry cleaned.",
+      "smell": "A properly cleaned garment should not smell of solvent. Sweat, smoke and food odours usually come out in cleaning. If you notice a smell after cleaning, tell us.",
+      "howoften": "Jackets and suits: every few wears, or when there is a stain or odour. Always clean both pieces of a suit together so the colour stays even. Coats at least once a season, before storing them.",
+      "storage": "Clean clothes before storing them for the season: moths are drawn to soiling, and invisible stains darken over time. Remove the plastic cover and use a breathable garment bag and a wide hanger.",
+      "white": "Whites turn grey or yellow from detergent residue, sweat and being washed with colours. Call us so we can judge whether the garment can be freshened up.",
+      "bleed": "If a garment has bled colour onto another, do not dry or iron it, because heat sets the dye. Bring it in as soon as you can.",
+      "hours": "For the opening hours of each shop, please call:",
+      "payment": "For payment options, please ask at the shop:",
+      "express": "For urgent orders, please call to check whether it is possible:",
+      "repair": "For repairs such as zips, buttons and hems, please ask at the shop:",
+      "guarantee": "If there is a problem with an order, please call the shop where you left the garment:",
+      "human": "Of course. Call and you will speak to someone at the shop:",
+      "thanks": "You are welcome! Ask away if there is anything else.",
+      "bye": "Goodbye and have a nice day!"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "credit": "Website by Wavsy"
+  }
+}

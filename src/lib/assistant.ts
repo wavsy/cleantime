@@ -1,0 +1,190 @@
+import type { Dictionary } from "@/lib/i18n";
+import { locations } from "@/lib/site";
+
+export type Topic = {
+  id: string;
+  keywords: string[];
+  answer: string;
+  call?: boolean;
+};
+
+
+// Extra knowledge: [id, keywords, show phone buttons]. The answer text lives
+// in `assistant.kb` of each language file.
+const knowledge: [keyof Dictionary["assistant"]["kb"], string[], boolean?][] = [
+  ["wine", ["wein", "вино", "вина", "wine"]],
+  ["coffee", ["kaffee", "tee ", "кафе", "чай", "coffee", "tea "]],
+  ["grease", ["fett", "öl", "мазн", "олио", "масло", "grease", "greasy", "oil"]],
+  ["ink", ["tinte", "kugelschreiber", "мастил", "химикал", "ink", "ballpoint"]],
+  ["blood", ["blut", "кръв", "blood"]],
+  ["sweat", ["schweiß", "deo", "gelb", "vergilb", "потн", "изпот", "дезодорант", "жълт", "пожълт", "sweat", "deodorant", "yellow"]],
+  ["makeup", ["lippenstift", "schminke", "грим", "червило", "фон дьо тен", "makeup", "make-up", "lipstick", "foundation"]],
+  ["wedding", ["hochzeit", "brautkleid", "abendkleid", "сватб", "булчинск", "бална", "абитуриент", "официалн", "wedding", "gown", "prom"]],
+  ["down", ["daune", "пух", "ски", "down jacket", "puffer", "ski"]],
+  ["home", ["vorhang", "vorhänge", "gardine", "bettwäsche", "decke", "kissen", "завес", "перде", "спално", "одеял", "юрган", "покривк", "възглавн", "curtain", "bedding", "duvet", "blanket", "linen", "tablecloth"]],
+  ["carpet", ["teppich", "килим", "мокет", "carpet", "rug"], true],
+  ["shrink", ["eingelaufen", "einlaufen", "geschrumpf", "сви ", "свих", "свие", "свил", "свива", "shrink", "shrunk"]],
+  ["smell", ["geruch", "riecht", "stinkt", "мирис", "мириш", "smell", "odour", "odor"]],
+  ["howoften", ["wie oft", "колко често", "how often"]],
+  ["storage", ["aufbewahr", "einlager", "motte", "saison", "съхран", "гардероб", "молц", "сезон", "storage", "store my", "moth"]],
+  ["white", ["weiße", "vergraut", "grau", "бял", "бели", "посив", "white", "grey", "gray"]],
+  ["bleed", ["abgefärbt", "abfärb", "пуснала боя", "пусна боя", "оцвет", "bleed", "bled", "colour run", "color run"]],
+  ["hours", ["öffnungszeit", "geöffnet", "offen", "geschlossen", "работно време", "отворен", "затвар", "до колко часа", "opening", "open ", "close", "hours"], true],
+  ["payment", ["zahl", "kartenzahlung", "bargeld", "плащ", "в брой", "с карта", "pay", "card", "cash"], true],
+  ["express", ["eilig", "dringend", "schnell", "heute", "für morgen", "bis morgen", "спешн", "експрес", "бързо", "днес", "утре", "urgent", "express", "same day", "today", "tomorrow"], true],
+  ["repair", ["reparatur", "reißverschluss", "knopf", "saum", "kürzen", "поправк", "цип", "копче", "подгъв", "скъсан", "repair", "zip", "button", "hemming", "shorten", "alteration", "torn", "ремонт"], true],
+  ["guarantee", ["beschädig", "garantie", "reklamation", "beschwerde", "kaputt", "повред", "гаранц", "рекламац", "съсип", "оплакван", "damage", "guarantee", "ruin", "complain"], true],
+  ["human", ["mensch", "mitarbeiter", "с човек", "служител", "оператор", "human", "real person", "staff"], true],
+  ["thanks", ["danke", "благодар", "мерси", "thank"]],
+  ["bye", ["tschüss", "auf wiedersehen", "довиждане", "чао", "bye"]],
+];
+
+// The assistant never invents text: every answer is assembled from the
+// same dictionary the page itself shows. Keywords cover BG, EN and DE so a
+// visitor can type in any of them regardless of the page language.
+// Order matters: on a tie the earlier, more specific topic wins.
+export function buildTopics(t: Dictionary): Topic[] {
+  const faq = t.faq.items;
+  const service = (i: number) =>
+    `${t.services.items[i].title}. ${t.services.items[i].text}`;
+
+  const extra: Topic[] = knowledge.map(([id, keywords, call]) => ({
+    id,
+    keywords,
+    answer: t.assistant.kb[id],
+    call,
+  }));
+
+  // Specific stains and topics come first so they beat the general ones.
+  return [
+    ...extra,
+    {
+      id: "robot",
+      keywords: ["roboter", "робот", "чатбот", "изкуствен", "robot", "chatbot"],
+      answer: t.assistant.disclaimer,
+    },
+    {
+      id: "stain",
+      keywords: ["fleck", "петн", "леке", "stain", "spot"],
+      answer: `${faq[2].a}\n${faq[3].a}`,
+    },
+    {
+      id: "label",
+      keywords: ["etikett", "pflege", "етикет", "символ", "знак", "label", "symbol"],
+      answer: [
+        t.care.text,
+        ...t.care.items.map((item) => `${item.title}: ${item.text}`),
+        t.care.note,
+      ].join("\n"),
+    },
+    {
+      id: "dye",
+      keywords: ["färb", "farbe", "боя", "боядис", "цвят", "dye", "colour", "color"],
+      answer: faq[5].a,
+    },
+    {
+      id: "leather",
+      keywords: ["leder", "кож", "велур", "набук", "leather", "suede", "nubuck"],
+      answer: `${service(1)}\n${faq[4].a}`,
+    },
+    {
+      id: "shoes",
+      keywords: ["schuh", "stiefel", "обувк", "маратонк", "кец", "shoe", "sneaker", "trainer", "boot"],
+      answer: service(4),
+      call: true,
+    },
+    {
+      id: "bags",
+      keywords: ["tasche", "koffer", "rucksack", "ausrüstung", "чант", "куфар", "раниц", "екипировк", "bag", "suitcase", "luggage", "gear"],
+      answer: service(5),
+      call: true,
+    },
+    {
+      id: "pickup",
+      keywords: ["abhol", "holen", "liefer", "взима", "взем", "доставк", "куриер", "pickup", "pick up", "deliver", "collect"],
+      answer: [
+        t.assistant.pickupIntro,
+        ...t.how.steps.map((step, i) => `${i + 1}. ${step.title}. ${step.text}`),
+      ].join("\n"),
+      call: true,
+    },
+    {
+      id: "price",
+      keywords: ["preis", "kostet", "kosten", "wie viel", "wie lange", "цен", "струва", "колко", "срок", "price", "cost", "how much", "how long"],
+      answer: faq[7].a,
+      call: true,
+    },
+    {
+      id: "locations",
+      keywords: ["wo sind", "wo ist", "wo finde", "adresse", "standort", "filiale", "къде", "адрес", "ателие", "намира", "карта", "where", "address", "location", "shop", "map"],
+      answer: [
+        t.assistant.locationsIntro,
+        ...locations.map(
+          (loc) =>
+            `${t.locations.items[loc.id].name}: ${t.locations.items[loc.id].address}, ${loc.phoneLabel}`,
+        ),
+      ].join("\n"),
+      call: true,
+    },
+    {
+      id: "prepare",
+      keywords: ["vorbereit", "подготв", "джоб", "prepare", "pocket"],
+      answer: faq[6].a,
+    },
+    {
+      id: "iron",
+      keywords: ["bügel", "глад", "iron"],
+      answer: service(3),
+      call: true,
+    },
+    {
+      id: "laundry",
+      keywords: ["wäsche", "waschen", "пране", "пера", "изпир", "laundry", "wash"],
+      answer: service(2),
+      call: true,
+    },
+    {
+      id: "whatis",
+      keywords: ["was ist", "lösungsmittel", "какво е", "какво всъщност", "разтворител", "what is", "solvent"],
+      answer: faq[0].a,
+    },
+    {
+      id: "which",
+      keywords: ["anzug", "sakko", "mantel", "wolle", "kaschmir", "seide", "kleid", "костюм", "сако", "палт", "вълн", "кашмир", "коприн", "рокл", "suit", "jacket", "coat", "wool", "cashmere", "silk", "dress"],
+      answer: faq[1].a,
+    },
+    {
+      id: "dryclean",
+      keywords: ["reinigung", "chemisch", "химическ", "dry clean"],
+      answer: `${service(0)}\n${faq[0].a}`,
+    },
+    {
+      id: "services",
+      keywords: ["leistung", "angebot", "was machen", "услуг", "предлага", "правите", "service", "offer", "what do you"],
+      answer: [
+        t.assistant.servicesIntro,
+        ...t.services.items.map((item) => `• ${item.title}`),
+      ].join("\n"),
+    },
+    {
+      id: "hello",
+      keywords: ["hallo", "guten tag", "guten morgen", "servus", "здравей", "здрасти", "добър ден", "hello", "hey"],
+      answer: t.assistant.hello,
+    },
+  ];
+}
+
+export function findTopic(topics: Topic[], question: string) {
+  // Trailing space lets keywords like "open " match the last word too.
+  const text = `${question.toLowerCase()} `;
+  let best: Topic | undefined;
+  let bestScore = 0;
+  for (const topic of topics) {
+    const score = topic.keywords.filter((k) => text.includes(k)).length;
+    if (score > bestScore) {
+      best = topic;
+      bestScore = score;
+    }
+  }
+  return best;
+}
