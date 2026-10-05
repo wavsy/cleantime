@@ -203,7 +203,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 href={`/${l}`}
                 hrefLang={l}
                 aria-current={l === lang ? "page" : undefined}
-                className={`rounded-full px-2 py-3 uppercase sm:px-2.5 sm:py-1.5 ${
+                className={`relative rounded-full px-2.5 py-1.5 uppercase after:absolute after:inset-x-0 after:-inset-y-2.5 ${
                   l === lang ? "bg-ink text-foam" : "text-ink-soft hover:text-ink"
                 }`}
               >
