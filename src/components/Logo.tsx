@@ -28,7 +28,8 @@ export function Logo({ className = "", inverted = false }: Props) {
   return (
     <span className={`logo flex items-center gap-2.5 ${className}`}>
       <LogoMark className="size-9 shrink-0" />
-      <span className="font-display text-lg font-bold tracking-tight">
+      {/* The name is dropped on the very narrowest phones so the menu fits. */}
+      <span className="font-display text-lg font-bold tracking-tight max-[350px]:hidden">
         Clean
         <span className={inverted ? "text-aqua" : "text-aqua-deep"}>Time</span>
       </span>
