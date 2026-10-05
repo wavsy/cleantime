@@ -1,132 +1,132 @@
 <p align="center">
-  <img src="public/og/bg.png" alt="CleanTime – химическо чистене и пране в София" width="820">
+  <img src="public/og/en.png" alt="CleanTime – dry cleaning and laundry in Sofia" width="820">
 </p>
 
 <h1 align="center">CleanTime</h1>
 
 <p align="center">
-  Сайтът на CleanTime – химическо чистене и пране с две ателиета в центъра на София.<br>
-  Три езика, 3D сцени, помощник в чат и всичко нужно за Google.
+  The website of CleanTime, a dry cleaning and laundry business with two shops in central Sofia.<br>
+  Three languages, 3D scenes, a chat assistant and everything Google needs.
 </p>
 
 <p align="center">
-  <a href="https://cleantime-six.vercel.app"><b>🌐 Виж сайта на живо → cleantime-six.vercel.app</b></a>
+  <a href="https://cleantime-six.vercel.app"><b>🌐 See it live → cleantime-six.vercel.app</b></a>
 </p>
 
 <p align="center">
-  <img alt="Версия" src="https://img.shields.io/badge/версия-1.0.0-35d6d0?style=flat-square">
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-35d6d0?style=flat-square">
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-16-0b1b2b?style=flat-square&logo=nextdotjs">
   <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind-4-0b1b2b?style=flat-square&logo=tailwindcss">
   <img alt="three.js" src="https://img.shields.io/badge/three.js-3D-0b1b2b?style=flat-square&logo=threedotjs">
-  <img alt="Езици" src="https://img.shields.io/badge/езици-BG%20·%20EN%20·%20DE-0c8f8c?style=flat-square">
+  <img alt="Languages" src="https://img.shields.io/badge/languages-BG%20·%20EN%20·%20DE-0c8f8c?style=flat-square">
 </p>
 
 ---
 
-## Какво има вътре
+## What's inside
 
 | | |
 |---|---|
-| 🌍 **Три езика** | Български, английски и немски, всеки на собствен адрес (`/bg`, `/en`, `/de`). |
-| 🫧 **3D мехури** | Сапунени мехури в началото, които плуват, отдръпват се от мишката и се пръскат при докосване. |
-| 🧥 **3D закачалка** | Хромирана закачалка в края на страницата, която се върти със скролването и при докосване. |
-| 🃏 **Карти в дълбочина** | Услугите се накланят към мишката или под пръста, с отблясък. |
-| 💬 **Помощник** | Чат с около 40 теми: услуги, петна, етикети, боядисване, ателиета. Разбира и трите езика. |
-| 🏷️ **Етикетът на дрехата** | Какво значат знаците за професионално почистване. |
-| ↔️ **Преди и след** | Плъзгач за сравнение на снимки. |
-| 📍 **Двете ателиета** | Карта, телефон и упътване за всяко. |
-| 📱 **Телефон на първо място** | Меню на цял екран, лента „Обади се“, ефекти при докосване. |
-| 🔎 **За Google** | Данни за местен бизнес, въпроси и отговори, карта на сайта, картинки за споделяне. |
+| 🌍 **Three languages** | Bulgarian, English and German, each on its own address (`/bg`, `/en`, `/de`). |
+| 🫧 **3D bubbles** | Soap bubbles in the hero that float, move away from the mouse and scatter when tapped. |
+| 🧥 **3D hanger** | A chrome clothes hanger at the end of the page that turns with scrolling and spins when tapped. |
+| 🃏 **Cards with depth** | Service cards tilt toward the mouse or under a finger, with a glare. |
+| 💬 **Assistant** | A chat covering about 40 topics: services, stains, care labels, dyeing, shops. Understands all three languages. |
+| 🏷️ **Care label guide** | What the professional cleaning symbols mean. |
+| ↔️ **Before and after** | A slider for comparing photos. |
+| 📍 **Two shops** | Map, phone and directions for each. |
+| 📱 **Phone first** | Full-screen menu, a "Call" bar, touch effects. |
+| 🔎 **For Google** | Local business data, questions and answers, sitemap, share images. |
 
-Без цени на сайта и без онлайн поръчка: така е решено с клиента. Главното действие навсякъде е обаждане.
+There are no prices and no online ordering on the site: that was agreed with the client. The main action everywhere is a phone call.
 
-## Стартиране
+## Getting started
 
-Трябва Node.js 20 или по-нов.
+Requires Node.js 20 or newer.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Сайтът тръгва на [http://localhost:3000](http://localhost:3000) и пренасочва към `/bg`.
+The site starts at [http://localhost:3000](http://localhost:3000) and redirects to `/bg`.
 
-| Команда | Какво прави |
+| Command | What it does |
 |---|---|
-| `npm run dev` | Пуска сайта за разработка. |
-| `npm run build` | Строи готовата версия. |
-| `npm run start` | Пуска построената версия. |
-| `npm run lint` | Проверява кода. |
+| `npm run dev` | Runs the site for development. |
+| `npm run build` | Builds the production version. |
+| `npm run start` | Serves the built version. |
+| `npm run lint` | Checks the code. |
 
-## Къде какво се намира
+## Where things live
 
 ```
 src/
 ├── app/
-│   ├── [lang]/           страницата и общата рамка за всеки език
-│   ├── globals.css       цветове, анимации, 3D накланяне
-│   ├── sitemap.ts        карта на сайта
-│   ├── robots.ts         правила за търсачките
-│   └── manifest.ts       иконка и име за началния екран на телефон
+│   ├── [lang]/           the page and shared layout for each language
+│   ├── globals.css       colours, animations, 3D tilt
+│   ├── sitemap.ts        sitemap
+│   ├── robots.ts         rules for search engines
+│   └── manifest.ts       icon and name for a phone's home screen
 ├── components/
-│   ├── three/            3D сцените: мехури, закачалка и общата им основа
-│   ├── Scene3D.tsx       зарежда 3D сцена след първото изрисуване
-│   ├── Assistant.tsx     чатът на помощника
-│   ├── Tilt.tsx          карта, която се накланя в 3D
-│   ├── BeforeAfter.tsx   плъзгачът „преди и след“
-│   ├── MobileMenu.tsx    менюто за телефон
-│   ├── Effects.tsx       лентата за напредък и появяването при скролване
-│   └── Logo.tsx          логото
+│   ├── three/            the 3D scenes: bubbles, hanger and their shared base
+│   ├── Scene3D.tsx       loads a 3D scene after first paint
+│   ├── Assistant.tsx     the assistant chat
+│   ├── Tilt.tsx          a card that tilts in 3D
+│   ├── BeforeAfter.tsx   the before and after slider
+│   ├── MobileMenu.tsx    the phone menu
+│   ├── Effects.tsx       the progress bar and the reveal on scroll
+│   └── Logo.tsx          the logo
 ├── lib/
-│   ├── site.ts           ателиетата, телефоните, адресът на сайта
-│   ├── i18n.ts           списъкът с езици
-│   └── assistant.ts      кои думи към кой отговор водят
+│   ├── site.ts           shops, phone numbers, the site address
+│   ├── i18n.ts           the list of languages
+│   └── assistant.ts      which words lead to which answer
 └── messages/
-    ├── bg.json           всички текстове на български
-    ├── en.json           … на английски
-    └── de.json           … на немски
+    ├── bg.json           every text in Bulgarian
+    ├── en.json           … in English
+    └── de.json           … in German
 ```
 
-## Как се променя нещо
+## How to change something
 
-**Текст.** Всичко, което се чете на сайта, е в `src/messages/`. Една промяна се прави и в трите файла, със същите ключове.
+**Text.** Everything a visitor reads is in `src/messages/`. Make each change in all three files, under the same keys.
 
-**Телефон или адрес.** В `src/lib/site.ts`, а изписването на адреса за всеки език е в `locations.items` на трите езикови файла.
+**Phone or address.** In `src/lib/site.ts`; how the address is written in each language is under `locations.items` in the three language files.
 
-**Нов отговор на помощника.** Текстът отива в `assistant.kb` на трите езикови файла, а думите, по които се разпознава въпросът, в `knowledge` в `src/lib/assistant.ts`. Помощникът не съчинява нищо: отговаря само с текст от тези файлове, а когато не знае, дава телефоните.
+**A new assistant answer.** The text goes in `assistant.kb` in the three language files, and the words that trigger it go in `knowledge` in `src/lib/assistant.ts`. The assistant never makes anything up: it answers only with text from these files, and when it does not know, it shows the phone numbers.
 
-**Нов език.** Нов файл в `src/messages/`, добавен в `src/lib/i18n.ts`, плюс картинка за споделяне в `public/og/`.
+**A new language.** A new file in `src/messages/`, registered in `src/lib/i18n.ts`, plus a share image in `public/og/`.
 
-**Снимки.** Сивите полета с надпис „Снимка – предстои“ са местата за истинските снимки от ателиетата.
+**Photos.** The grey boxes marked "Photo coming soon" are where the real photos of the shops go.
 
-## Качване
+## Deployment
 
-Автоматично: всяка промяна в `main` се качва сама във Vercel и излиза на живия сайт след около минута. Всеки друг клон получава собствен адрес за преглед.
+Automatic: every change to `main` is deployed to Vercel and is live in about a minute. Every other branch gets its own preview address.
 
-Две настройки управляват поведението в търсачките:
+Two settings control how search engines see the site:
 
-| Настройка | За какво е |
+| Setting | What it is for |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | Истинският адрес на сайта, например `https://cleantime.bg`. Без нея се ползва адресът от Vercel. |
-| `NEXT_PUBLIC_INDEXABLE` | Стойност `true` пуска сайта в Google. Без нея сайтът е скрит от търсачките. |
+| `NEXT_PUBLIC_SITE_URL` | The real address of the site, for example `https://cleantime.bg`. Without it the Vercel address is used. |
+| `NEXT_PUBLIC_INDEXABLE` | Set to `true` to let Google index the site. Without it the site is hidden from search engines. |
 
-## Преди пускането на истинския домейн
+## Before going live on the real domain
 
-- [ ] Истински снимки от двете ателиета и поне една двойка „преди и след“
-- [ ] Работно време на двете ателиета
-- [ ] Клиентът е прочел текстовете, особено немския и английския
-- [ ] Домейнът е насочен към Vercel
-- [ ] `NEXT_PUBLIC_SITE_URL` и `NEXT_PUBLIC_INDEXABLE=true` са зададени
+- [ ] Real photos of both shops and at least one before and after pair
+- [ ] Opening hours for both shops
+- [ ] The client has read the texts, especially the German and English
+- [ ] The domain points to Vercel
+- [ ] `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_INDEXABLE=true` are set
 
-## Правила, които пазят сайта бърз
+## Rules that keep the site fast
 
-- Нищо не започва невидимо при първото изрисуване. Появяването при скролване се включва чак след зареждането и само за това, което е под екрана.
-- 3D сцените се зареждат след текста и бутоните и спират, когато не се виждат.
-- На телефон мехурите са по-малко и по-леки.
-- При изключени анимации в настройките на устройството 3D сцените и движенията не се пускат.
+- Nothing starts invisible on first paint. The reveal on scroll switches on only after the page has loaded, and only for content below the screen.
+- The 3D scenes load after the text and buttons, and pause while off screen.
+- On phones there are fewer, lighter bubbles.
+- When a device has animations turned off, the 3D scenes and motion do not run.
 
 ---
 
 <p align="center">
-  <b>Версия 1.0.0</b> · Николай Тодоров · <a href="https://wavsy.dev">Wavsy</a>
+  <b>Version 1.0.0</b> · Nikolai Todorov · <a href="https://wavsy.dev">Wavsy</a>
 </p>
