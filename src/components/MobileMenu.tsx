@@ -7,9 +7,10 @@ type Props = {
   label: string;
   items: { href: string; label: string }[];
   phones: { href: string; label: string }[];
+  extra?: { href: string; label: string }[];
 };
 
-export function MobileMenu({ label, items, phones }: Props) {
+export function MobileMenu({ label, items, phones, extra = [] }: Props) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -57,6 +58,15 @@ export function MobileMenu({ label, items, phones }: Props) {
                   className="rounded-full bg-aqua py-4 text-center font-semibold text-ink"
                 >
                   {phone.label}
+                </a>
+              ))}
+              {extra.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full border border-foam/25 py-4 text-center font-semibold"
+                >
+                  {link.label}
                 </a>
               ))}
             </div>

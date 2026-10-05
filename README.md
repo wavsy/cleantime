@@ -33,7 +33,8 @@
 | 🃏 **Cards with depth** | Service cards tilt toward the mouse or under a finger, with a glare. |
 | 💬 **Assistant** | A chat covering about 40 topics: services, stains, care labels, dyeing, shops. Understands all three languages. |
 | 🏷️ **Care label guide** | What the professional cleaning symbols mean. |
-| ↔️ **Before and after** | A slider for comparing photos. |
+| 🚚 **Home delivery** | The headline benefit: pickup and return at the customer's door, free on orders over €30. |
+| ✉️ **Viber and email** | One tap to message the shop on Viber or send an email. |
 | 📍 **Two shops** | Map, phone and directions for each. |
 | 📱 **Phone first** | Full-screen menu, a "Call" bar, touch effects. |
 | 🔎 **For Google** | Local business data, questions and answers, sitemap, share images. |
@@ -73,7 +74,6 @@ src/
 │   ├── Scene3D.tsx       loads a 3D scene after first paint
 │   ├── Assistant.tsx     the assistant chat
 │   ├── Tilt.tsx          a card that tilts in 3D
-│   ├── BeforeAfter.tsx   the before and after slider
 │   ├── MobileMenu.tsx    the phone menu
 │   ├── Effects.tsx       the progress bar and the reveal on scroll
 │   └── Logo.tsx          the logo
@@ -97,7 +97,9 @@ src/
 
 **A new language.** A new file in `src/messages/`, registered in `src/lib/i18n.ts`, plus a share image in `public/og/`.
 
-**Photos.** The grey boxes marked "Photo coming soon" are where the real photos of the shops go.
+**Photos.** They live in `public/photos/`. The current ones are free stock photos (see credits below); replace a file with the same name to swap in a real photo of the shops.
+
+**Viber and email.** In `src/lib/site.ts`.
 
 ## Deployment
 
@@ -112,7 +114,7 @@ Two settings control how search engines see the site:
 
 ## Before going live on the real domain
 
-- [ ] Real photos of both shops and at least one before and after pair
+- [ ] Real photos of both shops in place of the stock photos
 - [ ] Opening hours for both shops
 - [ ] The client has read the texts, especially the German and English
 - [ ] The domain points to Vercel
@@ -124,6 +126,19 @@ Two settings control how search engines see the site:
 - The 3D scenes load after the text and buttons, and pause while off screen.
 - On phones there are fewer, lighter bubbles.
 - When a device has animations turned off, the 3D scenes and motion do not run.
+
+## Photo credits
+
+The photos are free to use under the [Unsplash License](https://unsplash.com/license) and the [Pexels License](https://www.pexels.com/license/). They are stock photos, not pictures of the CleanTime shops.
+
+| File | Source |
+|---|---|
+| `hero.jpg` | [Unsplash](https://unsplash.com/photos/gkbAYJIMVDA) |
+| `garments.jpg` | [Unsplash](https://unsplash.com/photos/YbGMa1Jz1yY) |
+| `shirts.jpg` | [Unsplash](https://unsplash.com/photos/oRVB7tcR1YI) |
+| `knitwear.jpg` | [Unsplash](https://unsplash.com/photos/aJN-jjFLyCU) |
+| `rack.jpg` | [Unsplash](https://unsplash.com/photos/k06EAtkJzXU) |
+| `shirt.jpg` | [Pexels](https://www.pexels.com/photo/person-holding-blue-dress-shirt-9558253/) |
 
 ---
 

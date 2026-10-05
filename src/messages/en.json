@@ -6,21 +6,21 @@
   "nav": {
     "services": "Services",
     "how": "How it works",
-    "results": "Results",
     "locations": "Shops",
     "call": "Call us",
     "language": "Language",
-    "menu": "Menu"
+    "menu": "Menu",
+    "delivery": "Delivery"
   },
   "hero": {
     "eyebrow": "Dry cleaning · Sofia",
     "title": "Your clothes deserve more than a washing machine",
-    "text": "Dry cleaning, laundry, stains and shoes. Two shops in central Sofia, plus pickup and delivery from your address.",
+    "text": "Dry cleaning, laundry, stains and shoes. We collect your clothes from your home and bring them back clean, and delivery is free on orders over €30.",
     "callPrimary": "Call now",
     "seeLocations": "See our shops",
     "facts": [
       "2 shops in the centre",
-      "Pickup and delivery",
+      "Free delivery over €30",
       "Clothes, leather, shoes and bags"
     ]
   },
@@ -108,23 +108,26 @@
     ],
     "note": "A bar under the circle means a gentle programme. If the label is missing or unreadable, bring the garment in and we will take a look."
   },
-  "results": {
-    "eyebrow": "Results",
-    "title": "Before and after",
-    "text": "Drag to see the difference.",
-    "before": "Before",
-    "after": "After",
-    "sliderLabel": "Before and after comparison"
-  },
   "gallery": {
-    "eyebrow": "Our shops",
-    "title": "Take a look inside",
-    "placeholder": "Photo coming soon"
+    "eyebrow": "Gallery",
+    "title": "Care for every garment",
+    "alts": [
+      "White shirts on hangers",
+      "Cleaned garments in covers",
+      "Shirts on a rail",
+      "Folded knitted jumpers",
+      "Clothes on hangers",
+      "Light blue shirt on a stand"
+    ]
   },
   "faq": {
     "eyebrow": "Questions",
     "title": "Frequently asked questions",
     "items": [
+      {
+        "q": "How much does delivery cost?",
+        "a": "Delivery is free on orders over €30. We collect your clothes from your address and bring them back clean. For smaller orders, call us and we will tell you the terms."
+      },
       {
         "q": "What is dry cleaning, really?",
         "a": "Cleaning with a solvent instead of water. The solvent lifts grease and dirt without making the fibres swell, so the garment does not shrink or lose its shape. It suits wool, silk, viscose and lined garments."
@@ -228,10 +231,28 @@
       "human": "Of course. Call and you will speak to someone at the shop:",
       "thanks": "You are welcome! Ask away if there is anything else.",
       "bye": "Goodbye and have a nice day!"
-    }
+    },
+    "pickupFree": "Delivery is free on orders over €30."
   },
   "footer": {
     "rights": "All rights reserved.",
     "credit": "Website by Wavsy"
+  },
+  "delivery": {
+    "badge": "Our big plus",
+    "title": "Delivery to your door",
+    "text": "You do not need to come to the shop. We collect your clothes from your address and bring them back clean to your door.",
+    "free": "Free delivery",
+    "freeText": "on orders over €30",
+    "points": [
+      "We collect from home or office",
+      "We return to your door",
+      "We agree on a day and time that suit you"
+    ]
+  },
+  "contact": {
+    "viber": "Message on Viber",
+    "email": "Email us",
+    "title": "Write to us"
   }
 }

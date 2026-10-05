@@ -42,26 +42,7 @@ body {
   outline-offset: 3px;
 }
 
-/* Photo placeholders until the client's real photos arrive. */
-.placeholder {
-  background:
-    repeating-linear-gradient(
-      135deg,
-      transparent 0 14px,
-      rgb(11 27 43 / 0.05) 14px 15px
-    ),
-    linear-gradient(160deg, #e3eef4, #cfe6ea);
-}
 
-.placeholder-dark {
-  background:
-    repeating-linear-gradient(
-      135deg,
-      transparent 0 14px,
-      rgb(255 255 255 / 0.06) 14px 15px
-    ),
-    linear-gradient(160deg, #1a3147, #0f2437);
-}
 
 .bubble {
   animation: float 9s ease-in-out infinite;

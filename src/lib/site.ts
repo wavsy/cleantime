@@ -29,6 +29,9 @@ export const locations = [
 
 export const mainPhone = locations[0];
 
+export const email = "snejaka78@gmail.com";
+export const viberLink = `viber://chat?number=${encodeURIComponent(mainPhone.phone)}`;
+
 export function mapLink(query: string) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }

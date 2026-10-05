@@ -6,21 +6,21 @@
   "nav": {
     "services": "Leistungen",
     "how": "Ablauf",
-    "results": "Ergebnisse",
     "locations": "Filialen",
     "call": "Anrufen",
     "language": "Sprache",
-    "menu": "Menü"
+    "menu": "Menü",
+    "delivery": "Lieferung"
   },
   "hero": {
     "eyebrow": "Textilreinigung · Sofia",
     "title": "Ihre Kleidung verdient mehr als eine Waschmaschine",
-    "text": "Chemische Reinigung, Wäsche, Fleckentfernung und Schuhpflege. Zwei Filialen im Zentrum von Sofia sowie Abholung und Lieferung an Ihre Adresse.",
+    "text": "Chemische Reinigung, Wäsche, Fleckentfernung und Schuhpflege. Wir holen Ihre Kleidung zu Hause ab und bringen sie sauber zurück – ab 30 € Bestellwert ist die Lieferung kostenlos.",
     "callPrimary": "Jetzt anrufen",
     "seeLocations": "Unsere Filialen",
     "facts": [
       "2 Filialen im Zentrum",
-      "Abholung und Lieferung",
+      "Kostenlose Lieferung ab 30 €",
       "Kleidung, Leder, Schuhe und Taschen"
     ]
   },
@@ -108,23 +108,26 @@
     ],
     "note": "Ein Balken unter dem Kreis bedeutet ein schonendes Programm. Fehlt das Etikett oder ist es unleserlich, bringen Sie das Kleidungsstück vorbei und wir sehen es uns an."
   },
-  "results": {
-    "eyebrow": "Ergebnisse",
-    "title": "Vorher und nachher",
-    "text": "Ziehen Sie den Regler, um den Unterschied zu sehen.",
-    "before": "Vorher",
-    "after": "Nachher",
-    "sliderLabel": "Vergleich vorher und nachher"
-  },
   "gallery": {
-    "eyebrow": "Unsere Filialen",
-    "title": "Werfen Sie einen Blick hinein",
-    "placeholder": "Foto folgt"
+    "eyebrow": "Galerie",
+    "title": "Sorgfalt für jedes Kleidungsstück",
+    "alts": [
+      "Weiße Hemden auf Bügeln",
+      "Gereinigte Kleidung in Schutzhüllen",
+      "Hemden auf einer Stange",
+      "Gefaltete Strickpullover",
+      "Kleidung auf Bügeln",
+      "Hellblaues Hemd auf einem Ständer"
+    ]
   },
   "faq": {
     "eyebrow": "Fragen",
     "title": "Häufige Fragen",
     "items": [
+      {
+        "q": "Was kostet die Lieferung?",
+        "a": "Ab 30 € Bestellwert ist die Lieferung kostenlos. Wir holen Ihre Kleidung an Ihrer Adresse ab und bringen sie sauber zurück. Bei kleineren Aufträgen rufen Sie bitte an, wir nennen Ihnen die Bedingungen."
+      },
       {
         "q": "Was ist chemische Reinigung eigentlich?",
         "a": "Reinigung mit einem Lösungsmittel statt mit Wasser. Das Lösungsmittel löst Fett und Schmutz, ohne dass die Fasern aufquellen, deshalb läuft das Kleidungsstück nicht ein und behält seine Form. Geeignet für Wolle, Seide, Viskose und gefütterte Kleidung."
@@ -228,10 +231,28 @@
       "human": "Natürlich. Rufen Sie an und Sie sprechen mit jemandem aus der Filiale:",
       "thanks": "Gern geschehen! Fragen Sie ruhig, wenn es noch etwas gibt.",
       "bye": "Auf Wiedersehen und einen schönen Tag!"
-    }
+    },
+    "pickupFree": "Ab 30 € Bestellwert ist die Lieferung kostenlos."
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
     "credit": "Website von Wavsy"
+  },
+  "delivery": {
+    "badge": "Unser großes Plus",
+    "title": "Lieferung bis an Ihre Haustür",
+    "text": "Sie müssen nicht in die Filiale kommen. Wir holen Ihre Kleidung an Ihrer Adresse ab und bringen sie sauber bis an Ihre Tür zurück.",
+    "free": "Kostenlose Lieferung",
+    "freeText": "ab 30 € Bestellwert",
+    "points": [
+      "Abholung zu Hause oder im Büro",
+      "Rückgabe bis an Ihre Tür",
+      "Tag und Uhrzeit nach Absprache"
+    ]
+  },
+  "contact": {
+    "viber": "Per Viber schreiben",
+    "email": "E-Mail schreiben",
+    "title": "Schreiben Sie uns"
   }
 }

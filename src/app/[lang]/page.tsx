@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BeforeAfter } from "@/components/BeforeAfter";
 import { Assistant } from "@/components/Assistant";
 import { Effects } from "@/components/Effects";
 import { Logo } from "@/components/Logo";
@@ -9,7 +9,15 @@ import { Scene3D } from "@/components/Scene3D";
 import { Tilt } from "@/components/Tilt";
 import { buildTopics } from "@/lib/assistant";
 import { getDictionary, isLocale, locales } from "@/lib/i18n";
-import { locations, mainPhone, mapEmbed, mapLink, siteUrl } from "@/lib/site";
+import {
+  email,
+  locations,
+  mainPhone,
+  mapEmbed,
+  mapLink,
+  siteUrl,
+  viberLink,
+} from "@/lib/site";
 
 function PhoneIcon() {
   return (
@@ -24,6 +32,50 @@ function PhoneIcon() {
     </svg>
   );
 }
+
+function ViberIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M12 3c-5 0-8.5 3.2-8.5 7.6 0 2.5 1.2 4.7 3.1 6.1V21l3.6-2.2c.6.1 1.2.2 1.8.2 5 0 8.5-3.3 8.5-7.7C20.5 6.2 17 3 12 3Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.5 8.5c0 3 2 5 5 5.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="14"
+        rx="3"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <path
+        d="m4 7 8 6 8-6"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+const galleryPhotos = ["garments", "shirts", "knitwear", "rack", "shirt"];
 
 function CareSymbol({ symbol }: { symbol: string }) {
   return (
@@ -81,6 +133,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
     logo: `${siteUrl}/logo.svg`,
     description: t.meta.description,
     telephone: loc.phone,
+    email,
     hasMap: mapLink(loc.mapQuery),
     areaServed: { "@type": "City", name: "Sofia" },
     address: {
@@ -102,9 +155,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   };
 
   const nav = [
+    { href: "#delivery", label: t.nav.delivery },
     { href: "#services", label: t.nav.services },
     { href: "#how", label: t.nav.how },
-    { href: "#results", label: t.nav.results },
     { href: "#locations", label: t.nav.locations },
   ];
 
@@ -166,7 +219,15 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             {t.nav.call}
           </a>
 
-          <MobileMenu label={t.nav.menu} items={nav} phones={phones} />
+          <MobileMenu
+            label={t.nav.menu}
+            items={nav}
+            phones={phones}
+            extra={[
+              { href: viberLink, label: t.contact.viber },
+              { href: `mailto:${email}`, label: t.contact.email },
+            ]}
+          />
         </div>
       </header>
 
@@ -213,10 +274,85 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
             <Tilt
               max={7}
-              className="placeholder grid aspect-[4/3] place-items-center sm:aspect-[4/5] rounded-[2rem] text-sm text-ink-soft shadow-2xl shadow-ink/10"
+              className="aspect-[4/3] overflow-hidden rounded-[2rem] shadow-2xl shadow-ink/15 sm:aspect-[4/5]"
             >
-              <span className="pop">{t.gallery.placeholder}</span>
+              <Image
+                src="/photos/hero.jpg"
+                alt={t.gallery.alts[0]}
+                fill
+                priority
+                sizes="(min-width: 1024px) 520px, 100vw"
+                className="object-cover"
+              />
+              <span className="pop absolute bottom-5 left-5 rounded-full bg-foam/95 px-4 py-2 text-sm font-semibold text-ink shadow-lg">
+                {t.hero.facts[1]}
+              </span>
             </Tilt>
+          </div>
+        </section>
+
+        <section id="delivery" className="bg-ink py-16 text-foam lg:py-24">
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-aqua uppercase">
+                {t.delivery.badge}
+              </p>
+              <h2 className="font-display text-3xl font-bold tracking-tight text-balance sm:text-5xl">
+                {t.delivery.title}
+              </h2>
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-foam/70">
+                {t.delivery.text}
+              </p>
+              <ul className="mt-7 space-y-3">
+                {t.delivery.points.map((point) => (
+                  <li key={point} className="flex items-center gap-3">
+                    <span className="grid size-6 shrink-0 place-items-center rounded-full bg-aqua text-ink">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        aria-hidden
+                      >
+                        <path
+                          d="M2.5 6.5 5 9l4.5-6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={`tel:${mainPhone.phone}`}
+                  className="flex items-center gap-2 rounded-full bg-aqua px-6 py-4 font-semibold text-ink hover:bg-foam"
+                >
+                  <PhoneIcon />
+                  {mainPhone.phoneLabel}
+                </a>
+                <a
+                  href={viberLink}
+                  className="flex items-center gap-2 rounded-full border border-foam/25 px-6 py-4 font-semibold hover:border-foam"
+                >
+                  <ViberIcon />
+                  {t.contact.viber}
+                </a>
+              </div>
+            </div>
+            <div className="reveal">
+              <Tilt className="rounded-[2rem] bg-aqua p-8 text-ink sm:p-10">
+                <p className="pop font-semibold">{t.delivery.free}</p>
+                <p className="pop mt-2 font-display text-6xl font-bold tracking-tight sm:text-7xl">
+                  30 €+
+                </p>
+                <p className="mt-3 text-lg">{t.delivery.freeText}</p>
+              </Tilt>
+            </div>
           </div>
         </section>
 
@@ -302,57 +438,40 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           </div>
         </section>
 
-        <section id="results" className="bg-ink py-20 text-foam lg:py-28">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <p className="mb-4 text-xs font-semibold tracking-[0.2em] text-aqua uppercase">
-              {t.results.eyebrow}
-            </p>
-            <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
-              {t.results.title}
-            </h2>
-            <p className="mt-4 text-foam/70">{t.results.text}</p>
-            <div className="reveal mt-10">
-              <BeforeAfter
-                beforeLabel={t.results.before}
-                afterLabel={t.results.after}
-                sliderLabel={t.results.sliderLabel}
-                before={
-                  <div className="placeholder-dark grid h-full place-items-center text-sm text-foam/60">
-                    {t.gallery.placeholder}
-                  </div>
-                }
-                after={
-                  <div className="placeholder grid h-full place-items-center text-sm text-ink-soft">
-                    {t.gallery.placeholder}
-                  </div>
-                }
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-foam py-20 lg:py-28">
+        <section className="py-20 lg:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <Eyebrow>{t.gallery.eyebrow}</Eyebrow>
             <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
               {t.gallery.title}
             </h2>
             <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:grid-rows-2">
-              {[0, 1, 2, 3, 4].map((i) => (
+              {galleryPhotos.map((photo, i) => (
                 <div
-                  key={i}
-                  className={`placeholder reveal grid min-h-40 place-items-center rounded-3xl p-4 text-center text-sm text-ink-soft ${
-                    i === 0 ? "col-span-2 md:row-span-2 md:min-h-96" : ""
+                  key={photo}
+                  className={`reveal relative min-h-44 overflow-hidden rounded-3xl ${
+                    i === 0
+                      ? "col-span-2 min-h-64 md:row-span-2 md:min-h-96"
+                      : ""
                   }`}
                 >
-                  {t.gallery.placeholder}
+                  <Image
+                    src={`/photos/${photo}.jpg`}
+                    alt={t.gallery.alts[i + 1]}
+                    fill
+                    sizes={
+                      i === 0
+                        ? "(min-width: 768px) 560px, 100vw"
+                        : "(min-width: 768px) 280px, 50vw"
+                    }
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="faq" className="py-20 lg:py-28">
+        <section id="faq" className="bg-foam py-20 lg:py-28">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <Eyebrow>{t.faq.eyebrow}</Eyebrow>
             <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
@@ -379,7 +498,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           </div>
         </section>
 
-        <section id="locations" className="bg-foam py-20 lg:py-28">
+        <section id="locations" className="py-20 lg:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <Eyebrow>{t.locations.eyebrow}</Eyebrow>
             <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
@@ -391,7 +510,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 return (
                   <article
                     key={loc.id}
-                    className="reveal overflow-hidden rounded-3xl border border-line bg-mist"
+                    className="reveal overflow-hidden rounded-3xl border border-line bg-foam"
                   >
                     <iframe
                       title={item.name}
@@ -425,9 +544,30 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 );
               })}
             </div>
+
+            <div className="reveal mt-6 flex flex-col gap-4 rounded-3xl bg-ink p-7 text-foam sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-xl font-semibold">{t.contact.title}</p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={viberLink}
+                  className="flex items-center gap-2 rounded-full bg-aqua px-5 py-3 font-semibold text-ink hover:bg-foam"
+                >
+                  <ViberIcon />
+                  {t.contact.viber}
+                </a>
+                <a
+                  href={`mailto:${email}`}
+                  className="flex items-center gap-2 rounded-full border border-foam/25 px-5 py-3 font-semibold hover:border-foam"
+                >
+                  <MailIcon />
+                  {email}
+                </a>
+              </div>
+            </div>
           </div>
         </section>
-        <section className="relative overflow-hidden bg-ink text-foam">
+
+        <section className="relative overflow-hidden border-t border-foam/10 bg-ink text-foam">
           <div className="mx-auto grid max-w-6xl gap-6 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-28">
             <div className="relative z-10">
               <h2 className="font-display text-3xl font-bold tracking-tight text-balance sm:text-5xl">
@@ -460,6 +600,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <p>
             © {new Date().getFullYear()} CleanTime. {t.footer.rights}
           </p>
+          <a href={`mailto:${email}`} className="hover:text-ink">
+            {email}
+          </a>
           <a
             href="https://wavsy.dev"
             target="_blank"
@@ -474,17 +617,26 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <Assistant
         t={t.assistant}
         topics={buildTopics(t)}
-        phones={phones}
+        phones={[...phones, { href: viberLink, label: "Viber" }]}
       />
 
       <div className="call-bar fixed inset-x-0 bottom-0 z-40 border-t border-line bg-foam/95 p-3 backdrop-blur sm:hidden">
-        <a
-          href={`tel:${mainPhone.phone}`}
-          className="call-pulse flex items-center justify-center gap-2 rounded-full bg-ink py-3.5 font-semibold text-foam"
-        >
-          <PhoneIcon />
-          {t.nav.call} · {mainPhone.phoneLabel}
-        </a>
+        <div className="flex gap-2">
+          <a
+            href={`tel:${mainPhone.phone}`}
+            className="call-pulse flex flex-1 items-center justify-center gap-2 rounded-full bg-ink py-3.5 font-semibold text-foam"
+          >
+            <PhoneIcon />
+            {t.nav.call} · {mainPhone.phoneLabel}
+          </a>
+          <a
+            href={viberLink}
+            aria-label={t.contact.viber}
+            className="grid size-[52px] shrink-0 place-items-center rounded-full bg-[#7360f2] text-white"
+          >
+            <ViberIcon />
+          </a>
+        </div>
       </div>
     </>
   );
