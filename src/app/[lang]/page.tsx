@@ -203,7 +203,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 href={`/${l}`}
                 hrefLang={l}
                 aria-current={l === lang ? "page" : undefined}
-                className={`rounded-full px-2.5 py-1.5 uppercase ${
+                className={`rounded-full px-3 py-3 uppercase sm:px-2.5 sm:py-1.5 ${
                   l === lang ? "bg-ink text-foam" : "text-ink-soft hover:text-ink"
                 }`}
               >
@@ -480,8 +480,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             </h2>
             <div className="mt-10 divide-y divide-line border-y border-line">
               {t.faq.items.map((item) => (
-                <details key={item.q} className="group py-5">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-semibold [&::-webkit-details-marker]:hidden">
+                <details key={item.q} className="group">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-lg font-semibold [&::-webkit-details-marker]:hidden">
                     {item.q}
                     <span
                       aria-hidden
@@ -490,7 +490,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 pr-14 leading-relaxed text-ink-soft">
+                  <p className="-mt-2 pr-14 pb-5 leading-relaxed text-ink-soft">
                     {item.a}
                   </p>
                 </details>
