@@ -28,7 +28,8 @@
 | | |
 |---|---|
 | 🌍 **Three languages** | Bulgarian, English and German, each on its own address (`/bg`, `/en`, `/de`). |
-| 🫧 **3D bubbles** | Soap bubbles in the hero that float, move away from the mouse and scatter when tapped. |
+| 🫧 **3D bubbles** | Soap bubbles in the hero that float, move away from the mouse and pop into droplets when clicked or tapped. |
+| 🌊 **Logo wash** | Clicking the logo washes the screen with a wave, returns to the top and pops every bubble. |
 | 🧥 **3D hanger** | A chrome clothes hanger at the end of the page that turns with scrolling and spins when tapped. |
 | 🃏 **Cards with depth** | Service cards tilt toward the mouse or under a finger, with a glare. |
 | 💬 **Assistant** | A chat covering about 40 topics: services, stains, care labels, dyeing, shops. Understands all three languages. |
@@ -76,6 +77,7 @@ src/
 │   ├── Tilt.tsx          a card that tilts in 3D
 │   ├── MobileMenu.tsx    the phone menu
 │   ├── Effects.tsx       the progress bar and the reveal on scroll
+│   ├── HomeLink.tsx      the logo link and its "wash" back to the top
 │   └── Logo.tsx          the logo
 ├── lib/
 │   ├── site.ts           shops, phone numbers, the site address
@@ -126,6 +128,17 @@ Two settings control how search engines see the site:
 - The 3D scenes load after the text and buttons, and pause while off screen.
 - On phones there are fewer, lighter bubbles.
 - When a device has animations turned off, the 3D scenes and motion do not run.
+
+## The logo
+
+"Hanger Home": the shoulders of a clothes hanger form the roof of a house, for the shop's headline promise of pickup and delivery at the door. The files are in `brand/`:
+
+| File | Use |
+|---|---|
+| `cleantime-mark.svg` | Full colour on the dark tile: app icon, social profile. |
+| `cleantime-mark-mono.svg` | One colour, dark: stamps, receipts, bags. |
+| `cleantime-mark-white.svg` | One colour, white: on dark backgrounds. |
+| `concepts.png` | The three concepts that were explored. |
 
 ## Photo credits
 

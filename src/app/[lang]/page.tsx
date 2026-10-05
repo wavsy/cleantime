@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Assistant } from "@/components/Assistant";
 import { Effects } from "@/components/Effects";
+import { HomeLink } from "@/components/HomeLink";
 import { Logo } from "@/components/Logo";
 import { MobileMenu } from "@/components/MobileMenu";
 import { Scene3D } from "@/components/Scene3D";
@@ -180,9 +181,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
       <header className="sticky top-0 z-40 border-b border-line/70 bg-mist/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:gap-6 sm:px-6">
-          <Link href={`/${lang}`} aria-label="CleanTime">
+          <HomeLink href={`/${lang}`} label="CleanTime">
             <Logo />
-          </Link>
+          </HomeLink>
 
           <nav className="ml-auto hidden gap-7 text-sm text-ink-soft md:flex">
             {nav.map((item) => (
@@ -596,7 +597,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
       <footer className="border-t border-line bg-foam pt-10 pb-28 sm:pb-10">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 text-sm text-ink-soft sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <Logo className="text-ink" />
+          <HomeLink href={`/${lang}`} label="CleanTime">
+            <Logo className="text-ink" />
+          </HomeLink>
           <p>
             © {new Date().getFullYear()} CleanTime. {t.footer.rights}
           </p>
