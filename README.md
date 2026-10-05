@@ -30,7 +30,7 @@
 | 🌍 **Three languages** | Bulgarian, English and German, each on its own address (`/bg`, `/en`, `/de`). |
 | 🫧 **3D bubbles** | Soap bubbles in the hero that float, move away from the mouse and pop into droplets when clicked or tapped. |
 | 🌊 **Logo wash** | Clicking the logo washes the screen with a wave, returns to the top and pops every bubble. |
-| 🧥 **3D hanger** | A chrome clothes hanger at the end of the page that turns with scrolling and spins when tapped. |
+| 🧥 **3D logo** | The logo as a chrome 3D object at the end of the page; it turns with scrolling and spins when tapped. |
 | 🃏 **Cards with depth** | Service cards tilt toward the mouse or under a finger, with a glare. |
 | 💬 **Assistant** | A chat covering about 40 topics: services, stains, care labels, dyeing, shops. Understands all three languages. |
 | 🏷️ **Care label guide** | What the professional cleaning symbols mean. |
@@ -71,7 +71,7 @@ src/
 │   ├── robots.ts         rules for search engines
 │   └── manifest.ts       icon and name for a phone's home screen
 ├── components/
-│   ├── three/            the 3D scenes: bubbles, hanger and their shared base
+│   ├── three/            the 3D scenes: bubbles, the 3D logo and their shared base
 │   ├── Scene3D.tsx       loads a 3D scene after first paint
 │   ├── Assistant.tsx     the assistant chat
 │   ├── Tilt.tsx          a card that tilts in 3D

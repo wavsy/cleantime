@@ -14,44 +14,51 @@ import {
 } from "three";
 import { createStage } from "./stage";
 
-const v = (x: number, y: number) => new Vector3(x, y, 0);
+// Logo coordinates come straight from the 64x64 SVG mark (see Logo.tsx),
+// re-centred and flipped so y points up.
+const UNIT = 1 / 12;
+const v = (x: number, y: number) =>
+  new Vector3((x - 32) * UNIT, (32 - y) * UNIT, 0);
+const RADIUS = 2.5 * UNIT;
 
-// A clothes hanger drawn as two tubes: the hook and the triangular body.
-function buildHanger(material: Material) {
-  const hook = new CatmullRomCurve3([
-    v(0, 1.0),
-    v(0, 1.35),
-    v(0.2, 1.6),
-    v(0.32, 1.9),
-    v(0.14, 2.18),
-    v(-0.16, 2.16),
-    v(-0.32, 1.92),
-  ]);
-  const body = new CatmullRomCurve3(
-    [
-      v(0, 1.0),
-      v(-1.0, 0.52),
-      v(-2.0, 0.04),
-      v(-2.14, -0.14),
-      v(-1.96, -0.3),
-      v(0, -0.3),
-      v(1.96, -0.3),
-      v(2.14, -0.14),
-      v(2.0, 0.04),
-      v(1.0, 0.52),
-    ],
-    true,
-    "catmullrom",
-    0.2,
-  );
+// The "Hanger Home" mark in 3D: the hanger is the roof, the base is the house.
+function buildLogo(roofMaterial: Material, houseMaterial: Material) {
+  // Hook: up from the peak, then three quarters of a circle, as in the SVG arc.
+  const hook = [v(32, 22.5), v(32, 18.3)];
+  for (let angle = 75; angle >= -180; angle -= 15) {
+    const rad = (angle * Math.PI) / 180;
+    hook.push(v(32 + 5.6 * Math.cos(rad), 12.7 + 5.6 * Math.sin(rad)));
+  }
+  const roof = [v(8.5, 38.5), v(32, 22.5), v(55.5, 38.5)];
+  const house = [v(15.5, 41.5), v(15.5, 52.5), v(48.5, 52.5), v(48.5, 41.5)];
 
   const group = new Group();
-  const geometries: BufferGeometry[] = [
-    new TubeGeometry(hook, 64, 0.075, 16),
-    new TubeGeometry(body, 240, 0.085, 16, true),
-  ];
-  for (const geometry of geometries) group.add(new Mesh(geometry, material));
-  group.position.y = -0.7;
+  const geometries: BufferGeometry[] = [];
+  const cap = new SphereGeometry(RADIUS, 24, 24);
+  geometries.push(cap);
+
+  const addStroke = (
+    points: Vector3[],
+    material: Material,
+    tension: number,
+  ) => {
+    const curve = new CatmullRomCurve3(points, false, "catmullrom", tension);
+    const tube = new TubeGeometry(curve, points.length * 24, RADIUS, 20);
+    geometries.push(tube);
+    group.add(new Mesh(tube, material));
+    // Round ends, like the round line caps of the flat logo.
+    for (const end of [points[0], points[points.length - 1]]) {
+      const ball = new Mesh(cap, material);
+      ball.position.copy(end);
+      group.add(ball);
+    }
+  };
+
+  addStroke(hook, roofMaterial, 0.5);
+  addStroke(roof, roofMaterial, 0.02);
+  addStroke(house, houseMaterial, 0.02);
+
+  group.position.y = -0.15;
   return { group, geometries };
 }
 
@@ -90,10 +97,10 @@ export function start(canvas: HTMLCanvasElement) {
   const rig = new Group();
   scene.add(rig);
 
-  const hanger = buildHanger(chrome);
-  rig.add(hanger.group);
+  const logo = buildLogo(chrome, pearl);
+  rig.add(logo.group);
 
-  // Shapes orbiting the hanger: [geometry, material, radius, height, speed].
+  // Shapes orbiting the logo: [geometry, material, radius, height, speed].
   const shapes: [BufferGeometry, Material, number, number, number][] = [
     [new TorusGeometry(0.42, 0.15, 24, 64), pearl, 3.0, 1.3, 0.35],
     [new IcosahedronGeometry(0.5, 0), chrome, 3.3, -1.2, 0.28],
@@ -102,18 +109,26 @@ export function start(canvas: HTMLCanvasElement) {
     [new SphereGeometry(0.28, 32, 32), glass, 2.9, 1.9, 0.5],
     [new TorusGeometry(0.3, 0.1, 24, 64), chrome, 3.1, -1.9, 0.4],
   ];
-  const orbiters = shapes.map(([geometry, material, radius, height, speed], i) => {
-    const mesh = new Mesh(geometry, material);
-    rig.add(mesh);
-    return { mesh, radius, height, speed, phase: (i / shapes.length) * Math.PI * 2 };
-  });
+  const orbiters = shapes.map(
+    ([geometry, material, radius, height, speed], i) => {
+      const mesh = new Mesh(geometry, material);
+      rig.add(mesh);
+      return {
+        mesh,
+        radius,
+        height,
+        speed,
+        phase: (i / shapes.length) * Math.PI * 2,
+      };
+    },
+  );
 
   stage.onResize(() => {
     // Keep the whole composition in view on narrow screens.
     rig.scale.setScalar(Math.min(1, camera.aspect / 1.15));
   });
 
-  // A tap gives the hanger a spin that eases out.
+  // A tap gives the logo a spin that eases out.
   let spin = 0;
   stage.onTap(() => {
     spin += Math.PI * 2;
@@ -121,10 +136,10 @@ export function start(canvas: HTMLCanvasElement) {
 
   stage.run((t) => {
     spin *= 0.94;
-    hanger.group.rotation.y =
+    logo.group.rotation.y =
       Math.sin(t * 0.5) * 0.55 + pointer.x * 0.5 + scroll.value * 1.6 + spin;
-    hanger.group.rotation.x = pointer.y * -0.2;
-    hanger.group.position.y = -0.7 + Math.sin(t * 0.9) * 0.12;
+    logo.group.rotation.x = pointer.y * -0.2;
+    logo.group.position.y = -0.15 + Math.sin(t * 0.9) * 0.12;
 
     for (const o of orbiters) {
       const angle = t * o.speed + o.phase;
@@ -143,7 +158,7 @@ export function start(canvas: HTMLCanvasElement) {
 
   return () => {
     stage.dispose();
-    for (const geometry of hanger.geometries) geometry.dispose();
+    for (const geometry of logo.geometries) geometry.dispose();
     for (const [geometry] of shapes) geometry.dispose();
     chrome.dispose();
     pearl.dispose();

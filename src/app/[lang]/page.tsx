@@ -589,7 +589,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               </div>
             </div>
             <div className="relative h-80 lg:h-[28rem]">
-              <Scene3D scene="hanger" />
+              <Scene3D scene="logo" />
             </div>
           </div>
         </section>

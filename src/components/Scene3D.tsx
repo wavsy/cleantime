@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 const scenes = {
   bubbles: () => import("./three/bubbles"),
-  hanger: () => import("./three/hanger"),
+  logo: () => import("./three/logo"),
 };
 
 type Props = { scene: keyof typeof scenes; className?: string };
