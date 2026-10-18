@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://cleantime-six.vercel.app"><b>🌐 See it live → cleantime-six.vercel.app</b></a>
+  <a href="https://cleantimesofia.com"><b>🌐 See it live → cleantimesofia.com</b></a>
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-35d6d0?style=flat-square">
+  <img alt="Version" src="https://img.shields.io/badge/version-1.1.0-35d6d0?style=flat-square">
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-16-0b1b2b?style=flat-square&logo=nextdotjs">
   <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind-4-0b1b2b?style=flat-square&logo=tailwindcss">
   <img alt="three.js" src="https://img.shields.io/badge/three.js-3D-0b1b2b?style=flat-square&logo=threedotjs">
@@ -38,7 +38,8 @@
 | ✉️ **Viber and email** | One tap to message the shop on Viber or send an email. |
 | 📍 **Two shops** | Map, phone and directions for each. |
 | 📱 **Phone first** | Full-screen menu, a "Call" bar, touch effects. |
-| 🔎 **For Google** | Local business data, questions and answers, sitemap, share images. |
+| 🔎 **For Google** | Titles and descriptions that lead with the search words, local business data for each shop (address, postal code, coordinates, services), questions and answers, sitemap, share images. |
+| 📊 **Visitor counts** | Vercel Web Analytics: visits and the most viewed pages. |
 
 There are no prices and no online ordering on the site: that was agreed with the client. The main action everywhere is a phone call.
 
@@ -65,7 +66,7 @@ The site starts at [http://localhost:3000](http://localhost:3000) and redirects 
 ```
 src/
 ├── app/
-│   ├── [lang]/           the page and shared layout for each language
+│   ├── [lang]/           the page and shared layout for each language (Analytics is added in the layout)
 │   ├── globals.css       colours, animations, 3D tilt
 │   ├── sitemap.ts        sitemap
 │   ├── robots.ts         rules for search engines
@@ -80,7 +81,7 @@ src/
 │   ├── HomeLink.tsx      the logo link and its "wash" back to the top
 │   └── Logo.tsx          the logo
 ├── lib/
-│   ├── site.ts           shops, phone numbers, the site address
+│   ├── site.ts           shops, phone numbers, coordinates, the site address
 │   ├── i18n.ts           the list of languages
 │   └── assistant.ts      which words lead to which answer
 └── messages/
@@ -93,7 +94,9 @@ src/
 
 **Text.** Everything a visitor reads is in `src/messages/`. Make each change in all three files, under the same keys.
 
-**Phone or address.** In `src/lib/site.ts`; how the address is written in each language is under `locations.items` in the three language files.
+**Title and description in Google.** Under `meta` in the three language files. Keep the search words first ("Химическо чистене и пране в София") and the description under about 155 characters.
+
+**Phone or address.** In `src/lib/site.ts`, together with the postal code and map coordinates Google reads; how the address is written in each language is under `locations.items` in the three language files.
 
 **A new assistant answer.** The text goes in `assistant.kb` in the three language files, and the words that trigger it go in `knowledge` in `src/lib/assistant.ts`. The assistant never makes anything up: it answers only with text from these files, and when it does not know, it shows the phone numbers.
 
@@ -107,20 +110,35 @@ src/
 
 Automatic: every change to `main` is deployed to Vercel and is live in about a minute. Every other branch gets its own preview address.
 
-Two settings control how search engines see the site:
-
-| Setting | What it is for |
+| | |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | The real address of the site, for example `https://cleantimesofia.com`. Without it the Vercel address is used. |
-| `NEXT_PUBLIC_INDEXABLE` | Set to `true` to let Google index the site. Without it the site is hidden from search engines. |
+| **Address** | [cleantimesofia.com](https://cleantimesofia.com); `www` redirects to it. The old address cleantime-six.vercel.app still works. |
+| **Domain** | Bought through Vercel on 2026-10-18, renews automatically on 2027-10-18. DNS is managed in Vercel. |
+| **Vercel project** | `cleantime` |
 
-## Before going live on the real domain
+Two settings control how search engines see the site. Both are set in production:
 
-- [x] Photos: the stock photos stay (decided 2026-10-18)
-- [ ] Opening hours for both shops
-- [ ] The client has read the texts, especially the German and English
+| Setting | Value | What it is for |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | `https://cleantimesofia.com` | The real address of the site. Without it the Vercel address is used. |
+| `NEXT_PUBLIC_INDEXABLE` | `true` | Lets Google index the site. Without it the site is hidden from search engines. |
+
+## Google
+
+- **Search Console:** domain property `cleantimesofia.com` under the Wavsy account. It is verified by a `google-site-verification` TXT record in the Vercel DNS. **Do not delete that record**, or access is lost. The sitemap `https://cleantimesofia.com/sitemap.xml` is submitted.
+- **Google Business Profile:** belongs to the client, one per shop, each with a link to the site. This decides the place on the map in searches such as "химическо чистене София".
+
+## Status
+
 - [x] The domain points to Vercel (cleantimesofia.com, 2026-10-18)
 - [x] `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_INDEXABLE=true` are set
+- [x] Search Console verified and sitemap submitted
+- [x] Web Analytics on
+- [x] Services: the eight on the site are the final list (2026-10-18)
+- [x] Photos: the stock photos stay (decided 2026-10-18)
+- [ ] Opening hours for both shops
+- [ ] Google Business Profile for both shops, linked to the site
+- [ ] The client has read the texts, especially the German and English
 
 ## Rules that keep the site fast
 
@@ -156,5 +174,5 @@ The photos are free to use under the [Unsplash License](https://unsplash.com/lic
 ---
 
 <p align="center">
-  <b>Version 1.0.0</b> · Nikolai Todorov · <a href="https://wavsy.dev">Wavsy</a>
+  <b>Version 1.1.0</b> · Nikolai Todorov · <a href="https://wavsy.dev">Wavsy</a>
 </p>
