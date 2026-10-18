@@ -99,7 +99,7 @@ src/
 
 **A new language.** A new file in `src/messages/`, registered in `src/lib/i18n.ts`, plus a share image in `public/og/`.
 
-**Photos.** They live in `public/photos/`. The current ones are free stock photos (see credits below); replace a file with the same name to swap in a real photo of the shops.
+**Photos.** They live in `public/photos/`. They are free stock photos (see credits below), kept as the site's photos by decision of 2026-10-18; replace a file with the same name to swap one out.
 
 **Viber and email.** In `src/lib/site.ts`.
 
@@ -111,16 +111,16 @@ Two settings control how search engines see the site:
 
 | Setting | What it is for |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | The real address of the site, for example `https://cleantime.bg`. Without it the Vercel address is used. |
+| `NEXT_PUBLIC_SITE_URL` | The real address of the site, for example `https://cleantimesofia.com`. Without it the Vercel address is used. |
 | `NEXT_PUBLIC_INDEXABLE` | Set to `true` to let Google index the site. Without it the site is hidden from search engines. |
 
 ## Before going live on the real domain
 
-- [ ] Real photos of both shops in place of the stock photos
+- [x] Photos: the stock photos stay (decided 2026-10-18)
 - [ ] Opening hours for both shops
 - [ ] The client has read the texts, especially the German and English
-- [ ] The domain points to Vercel
-- [ ] `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_INDEXABLE=true` are set
+- [x] The domain points to Vercel (cleantimesofia.com, 2026-10-18)
+- [x] `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_INDEXABLE=true` are set
 
 ## Rules that keep the site fast
 
