@@ -128,6 +128,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const jsonLd = locations.map((loc) => ({
     "@context": "https://schema.org",
     "@type": "DryCleaningOrLaundry",
+    "@id": `${siteUrl}/#${loc.id}`,
     name: `CleanTime – ${t.locations.items[loc.id].name}`,
     url: `${siteUrl}/${lang}`,
     image: `${siteUrl}/og/${lang}.png`,
@@ -141,7 +142,17 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       "@type": "PostalAddress",
       streetAddress: loc.streetAddress,
       addressLocality: "Sofia",
+      postalCode: loc.postalCode,
       addressCountry: "BG",
+    },
+    geo: { "@type": "GeoCoordinates", ...loc.geo },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: t.services.title,
+      itemListElement: t.services.items.map((item) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: item.title },
+      })),
     },
   }));
 
@@ -241,8 +252,12 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <Scene3D scene="bubbles" />
           <div className="mx-auto grid max-w-6xl gap-10 px-4 pt-14 pb-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pt-24 lg:pb-28">
             <div className="relative">
-              <Eyebrow>{t.hero.eyebrow}</Eyebrow>
+              {/* The eyebrow sits inside the h1 so the heading carries the
+                  search words ("dry cleaning · Sofia"), not only the slogan. */}
               <h1 className="font-display text-[2rem] leading-[1.12] font-bold tracking-tight text-balance sm:text-5xl lg:text-[3.4rem]">
+                <span className="mb-4 block font-sans text-xs leading-normal font-semibold tracking-[0.2em] text-aqua-deep uppercase">
+                  {t.hero.eyebrow}
+                </span>
                 {t.hero.title}
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">

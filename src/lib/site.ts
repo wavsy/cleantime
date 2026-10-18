@@ -17,6 +17,8 @@ export const locations = [
     phoneLabel: "0896 825 999",
     mapQuery: "ул. Граф Игнатиев 29, София",
     streetAddress: "ul. Graf Ignatiev 29",
+    postalCode: "1142",
+    geo: { latitude: 42.689178, longitude: 23.3278691 },
   },
   {
     id: "solunska",
@@ -24,6 +26,8 @@ export const locations = [
     phoneLabel: "0893 983 225",
     mapQuery: "ул. Солунска 11, София",
     streetAddress: "ul. Solunska 11",
+    postalCode: "1000",
+    geo: { latitude: 42.6924638, longitude: 23.3215753 },
   },
 ] as const;
 
